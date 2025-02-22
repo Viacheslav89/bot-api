@@ -3,7 +3,7 @@ import applyCaseMiddleware from 'axios-case-converter';
 
 const api = applyCaseMiddleware(
   axios.create({
-    baseURL: 'http://87.249.49.97:78/api/v1/',
+    baseURL: 'https://87.249.49.97:78/api/v1/',
   })
 );
 api.interceptors.request.use(

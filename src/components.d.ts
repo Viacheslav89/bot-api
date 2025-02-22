@@ -8,7 +8,6 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     AppAccount: typeof import('./components/pages/AppAccount.vue')['default']
-    AppFooter: typeof import('./components/AppFooter.vue')['default']
     AppInfo: typeof import('./components/pages/AppInfo.vue')['default']
     AppLogin: typeof import('./components/pages/AppLogin.vue')['default']
     AppMailing: typeof import('./components/pages/AppMailing.vue')['default']
@@ -16,7 +15,6 @@ declare module 'vue' {
     AppToolBar: typeof import('./components/navigation/AppToolBar.vue')['default']
     AppUserForm: typeof import('./components/pages/AppUserForm.vue')['default']
     AppUsers: typeof import('./components/pages/AppUsers.vue')['default']
-    HelloWorld: typeof import('./components/HelloWorld.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }

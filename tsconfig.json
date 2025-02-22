@@ -9,6 +9,10 @@
     }
   ],
   "compilerOptions": {
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "preserveSymlinks": true,
+    "noImplicitAny": false,
+    "types": [],
+    "verbatimModuleSyntax": true,
   }
 }

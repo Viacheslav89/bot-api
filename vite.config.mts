@@ -53,6 +53,7 @@ export default defineConfig({
       },
     }),
   ],
+  base: '/bot-api/', 
   define: { 'process.env': {} },
   resolve: {
     alias: {

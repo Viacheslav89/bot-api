@@ -2,7 +2,7 @@
   <div class="pa-4 text-center">
     <v-dialog v-model="usersStore.isOpenUpdateUserForm" max-width="600">
       <v-form ref="form">
-        <v-card prepend-icon="mdi-account" title="User Profile">
+        <v-card prepend-icon="mdi-account">
           <v-card-text>
             <v-row dense>
               <v-col cols="12" md="12" sm="6">
@@ -69,6 +69,7 @@
 <script setup lang="ts">
 import { ref, computed, watch } from 'vue';
 import { useUsersStore } from '@/stores/useUsersStore';
+import type { SubmitEventPromise } from 'vuetify';
 import type { UserCreate } from '@/type';
 
 const usersStore = useUsersStore();

@@ -9,6 +9,6 @@
 </template>
 
 <script setup lang="ts">
-import AppNavigationDrawers from '@/components/navigation/AppNavigationDrawers.vue';
-import AppToolBar from '@/components/navigation/AppToolBar.vue';
+import AppNavigationDrawers from "@/components/navigation/AppNavigationDrawers.vue";
+import AppToolBar from "@/components/navigation/AppToolBar.vue";
 </script>

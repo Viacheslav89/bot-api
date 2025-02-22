@@ -7,7 +7,7 @@
 </template>
 
 <script setup lang="ts">
-import MainPage from '@/views/MainView.vue';
+import MainPage from "@/views/MainView.vue";
 </script>
 
 <style scoped lang="scss">

@@ -18,11 +18,7 @@
               ></v-text-field>
             </div>
 
-            <v-btn
-              class="mt-2"
-              type="submit"
-              color="grey"
-              block
+            <v-btn class="mt-2" type="submit" color="grey" block
               >Сохранить
             </v-btn>
           </v-form>
@@ -33,12 +29,12 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch } from 'vue';
-import { useAdminStore } from '../../stores/useAdminSrore';
-import MainPage from '@/views/MainView.vue';
+import { ref, watch } from "vue";
+import { useAdminStore } from "../../stores/useAdminSrore";
+import MainPage from "@/views/MainView.vue";
 
 const userStore = useAdminStore();
-import { useRouter } from 'vue-router';
+import { useRouter } from "vue-router";
 
 const router = useRouter();
 
@@ -48,8 +44,8 @@ const user = ref({
 
 const updateUser = () => {
   userStore.user.fullName = user.value.fullName;
-  if (router.currentRoute.value.name !== 'Account') return;
-  router.push({ name: 'Main' });
+  if (router.currentRoute.value.name !== "Account") return;
+  router.push({ name: "Main" });
 };
 
 watch(

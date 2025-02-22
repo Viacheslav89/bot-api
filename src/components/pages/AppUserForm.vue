@@ -67,19 +67,19 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, watch } from 'vue';
-import { useUsersStore } from '@/stores/useUsersStore';
-import type { SubmitEventPromise } from 'vuetify';
-import type { UserCreate } from '@/type';
+import { ref, computed, watch } from "vue";
+import { useUsersStore } from "@/stores/useUsersStore";
+import type { SubmitEventPromise } from "vuetify";
+import type { UserCreate } from "@/type";
 
 const usersStore = useUsersStore();
 const form = ref();
 
 const buttonTitle = computed(() => {
   if (usersStore.currentUserId) {
-    return 'Редактировать';
+    return "Редактировать";
   }
-  return 'Создать';
+  return "Создать";
 });
 
 const userData = computed(() => {
@@ -92,12 +92,12 @@ const userData = computed(() => {
       email: usersStore.usersList[index].email,
       tel: usersStore.usersList[index].tel,
       fullName: usersStore.usersList[index].fullName,
-      password: '',
+      password: "",
     };
   } else {
     return {
       ...usersStore.userCreateInitial(),
-      email: 'test@mail.ru',
+      email: "test@mail.ru",
     };
   }
 });
@@ -115,7 +115,7 @@ const takeUser = async (updateUser: UserCreate) => {
   const { valid } = await form.value.validate();
   if (!valid) return;
   const newPhoneNumber = updateUser.tel
-    ? updateUser.tel.replace(/[\s\-\(\)]/g, '').replace('+7', '8')
+    ? updateUser.tel.replace(/[\s\-\(\)]/g, "").replace("+7", "8")
     : null;
 
   if (usersStore.currentUserId) {
@@ -142,35 +142,35 @@ const validationEmail = ref([
       usersStore.usersList.some((user) => user.email === value) &&
       !usersStore.currentUserId
     )
-      return 'Такой email уже существует';
+      return "Такой email уже существует";
 
     if (re.test(String(value).toLowerCase())) return true;
-    return 'Введите корректный email';
+    return "Введите корректный email";
   },
 ]);
 
 const validateName = ref([
   (value: string) => {
     if (value.length > 0) return true;
-    return 'Введите имя';
+    return "Введите имя";
   },
 
   (value: string) => {
     if (value.length < 20) return true;
-    return 'Имя не должно превышать 20 символов';
+    return "Имя не должно превышать 20 символов";
   },
 ]);
 
 const validateTel = (event: Event) => {
-  let value = (event.target as HTMLInputElement).value.replace(/\D/g, '');
-  const countryCode = '+7';
+  let value = (event.target as HTMLInputElement).value.replace(/\D/g, "");
+  const countryCode = "+7";
 
   if (value.length === 0) {
-    (event.target as HTMLInputElement).value = '';
+    (event.target as HTMLInputElement).value = "";
     return;
   }
 
-  if (value.startsWith('7') || value.startsWith('8')) {
+  if (value.startsWith("7") || value.startsWith("8")) {
     value = value.substring(1);
   }
 

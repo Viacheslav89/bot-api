@@ -40,12 +40,11 @@
 </template>
 
 <script setup lang="ts">
-import { VForm } from 'vuetify/components';
-import { ref, computed } from 'vue';
-import type { UserFormData } from './../../type';
-import { useAdminStore } from './../../stores/useAdminSrore';
-import { useLoginFormStore } from './../../stores/useLoginFormStore';
-import { useRouter } from 'vue-router';
+import { ref, computed } from "vue";
+import type { UserFormData } from "./../../type";
+import { useAdminStore } from "./../../stores/useAdminSrore";
+import { useLoginFormStore } from "./../../stores/useLoginFormStore";
+import { useRouter } from "vue-router";
 
 const userStore = useAdminStore();
 const loginFormStore = useLoginFormStore();
@@ -60,8 +59,8 @@ const error = computed(() => {
 });
 
 const userData = ref<UserFormData>({
-  email: 'admin@axas.ru',
-  password: '123123123',
+  email: "admin@axas.ru",
+  password: "123123123",
 });
 
 const validationEmail = ref([
@@ -69,7 +68,7 @@ const validationEmail = ref([
     const re = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
     re.test(String(value).toLowerCase());
     if (re.test(String(value).toLowerCase())) return true;
-    return 'Введите корректный email';
+    return "Введите корректный email";
   },
 ]);
 
@@ -77,7 +76,7 @@ const handleLogin = async () => {
   await loginFormStore.login(userData.value);
 
   if (userStore.user.isSuperuser) {
-    router.push({ name: 'Main' });
+    router.push({ name: "Main" });
   }
 };
 </script>
